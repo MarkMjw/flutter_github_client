@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Row(
                 children: <Widget>[
                   Image.asset(
-                    'assets/image/ic_github.png',
+                    'images/ic_github.png',
                     width: 65,
                     height: 65,
                   ),

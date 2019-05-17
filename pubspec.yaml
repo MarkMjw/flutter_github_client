@@ -78,19 +78,19 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 
   assets:
-    - assets/image/ic_github.png
-    - assets/image/ic_edit_pencil.png
-    - assets/image/ic_fork_gray.png
-    - assets/image/ic_fork_green_light.png
-    - assets/image/ic_issue_gray.png
-    - assets/image/ic_keyboard_arrow_up_white_24dp.png
-    - assets/image/ic_launcher.png
-    - assets/image/ic_location_on_gray.png
-    - assets/image/ic_nav_home.png
-    - assets/image/ic_nav_home_white.png
-    - assets/image/ic_nav_mine.png
-    - assets/image/ic_nav_mine_white.png
-    - assets/image/ic_nav_task.png
-    - assets/image/ic_nav_task_white.png
-    - assets/image/ic_star_gray.png
-    - assets/image/ic_star_yellow_light.png
+    - images/ic_github.png
+    - images/ic_edit_pencil.png
+    - images/ic_fork_gray.png
+    - images/ic_fork_green_light.png
+    - images/ic_issue_gray.png
+    - images/ic_keyboard_arrow_up_white_24dp.png
+    - images/ic_launcher.png
+    - images/ic_location_on_gray.png
+    - images/ic_nav_home.png
+    - images/ic_nav_home_white.png
+    - images/ic_nav_mine.png
+    - images/ic_nav_mine_white.png
+    - images/ic_nav_task.png
+    - images/ic_nav_task_white.png
+    - images/ic_star_gray.png
+    - images/ic_star_yellow_light.png
