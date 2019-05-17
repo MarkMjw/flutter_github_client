@@ -23,6 +23,11 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  flutter_webview_plugin: ^0.3.5
+  http: ^0.12.0+2
+  cached_network_image: ^0.8.0
+  fluttertoast: ^3.1.0
+  intl: ^0.15.8
 
 dev_dependencies:
   flutter_test:
@@ -70,3 +75,21 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  assets:
+    - assets/image/ic_github.png
+    - assets/image/ic_edit_pencil.png
+    - assets/image/ic_fork_gray.png
+    - assets/image/ic_fork_green_light.png
+    - assets/image/ic_issue_gray.png
+    - assets/image/ic_keyboard_arrow_up_white_24dp.png
+    - assets/image/ic_launcher.png
+    - assets/image/ic_location_on_gray.png
+    - assets/image/ic_nav_home.png
+    - assets/image/ic_nav_home_white.png
+    - assets/image/ic_nav_mine.png
+    - assets/image/ic_nav_mine_white.png
+    - assets/image/ic_nav_task.png
+    - assets/image/ic_nav_task_white.png
+    - assets/image/ic_star_gray.png
+    - assets/image/ic_star_yellow_light.png
