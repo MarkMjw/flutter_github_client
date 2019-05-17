@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_github_client/config/color_config.dart';
+import 'package:flutter_github_client/main/main_page.dart';
 import 'package:http/http.dart' as http;
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -139,11 +140,12 @@ class _LoginPageState extends State<LoginPage> {
         },
         body: requestBody);
     if (response.statusCode == 201) {
-      final body = json.decode(response.body);
-      _saveAccount(username, password);
+//      final body = json.decode(response.body);
 //      _fetchUserInfo(token);
-      print("$body");
+//      print("$body");
+      _saveAccount(username, password);
       progress.hide();
+      Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => MainPage()), (route) => route == null);
     } else {
       progress.hide();
       Fluttertoast.showToast(
@@ -154,21 +156,21 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  Future _fetchUserInfo(String token) async {
-    var url = "https://api.github.com/user";
-
-    var response = await http.get(url, headers: {'Authorization': 'basic $token'});
-    if (response.statusCode == 200) {
-      final body = json.decode(response.body);
-      print("$body");
-    } else {
-      Fluttertoast.showToast(
-          msg: "Fetch user info failed",
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.BOTTOM,
-          timeInSecForIos: 1);
-    }
-  }
+//  Future _fetchUserInfo(String token) async {
+//    var url = "https://api.github.com/user";
+//
+//    var response = await http.get(url, headers: {'Authorization': 'basic $token'});
+//    if (response.statusCode == 200) {
+//      final body = json.decode(response.body);
+//      print("$body");
+//    } else {
+//      Fluttertoast.showToast(
+//          msg: "Fetch user info failed",
+//          toastLength: Toast.LENGTH_SHORT,
+//          gravity: ToastGravity.BOTTOM,
+//          timeInSecForIos: 1);
+//    }
+//  }
 
   _saveAccount(String username, String password) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
