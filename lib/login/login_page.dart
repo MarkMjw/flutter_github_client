@@ -5,6 +5,7 @@ import 'package:flutter_github_client/config/color_config.dart';
 import 'package:http/http.dart' as http;
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:progress_dialog/progress_dialog.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -116,6 +117,9 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future _login() async {
+    var progress = new ProgressDialog(context, ProgressDialogType.Normal);
+    progress.setMessage("Singing...");
+    progress.show();
     var username = _usernameController.text;
     var password = _passwordController.text;
 
@@ -139,7 +143,9 @@ class _LoginPageState extends State<LoginPage> {
       _saveAccount(username, password);
 //      _fetchUserInfo(token);
       print("$body");
+      progress.hide();
     } else {
+      progress.hide();
       Fluttertoast.showToast(
           msg: "Username or Password invalid",
           toastLength: Toast.LENGTH_SHORT,
@@ -172,8 +178,14 @@ class _LoginPageState extends State<LoginPage> {
 
   Future _readAccount() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    _usernameController.text = prefs.getString('username');
-    _passwordController.text = prefs.getString('password');
-    print("username:${prefs.getString('username')} ${prefs.getString('password')}");
+    var username = prefs.getString('username');
+    var password = prefs.getString('password');
+    _usernameController.text = username;
+    _passwordController.text = password;
+    print("username:$username password:$password");
+    if (username.isNotEmpty && password.isNotEmpty) {
+      // auto login
+      _login();
+    }
   }
 }
